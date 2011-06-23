@@ -1,0 +1,3 @@
+[submodule "webroot/js/build"]
+	path = webroot/js/build
+	url = git://github.com/rchavik/jquerytools-build
