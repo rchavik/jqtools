@@ -1,25 +1,15 @@
 <?php
 
-class TabsHelper extends AppHelper {
+App::import('Helper', 'Jqtools.Jqtools');
+class TabsHelper extends JqtoolsHelper {
+
+	var $script = 'tabs/tabs';
 
 	var $tab = false;
 	var $tabs = array();
 
-	var $View = null;
-
-	var $helpers = array(
-		'Html',
-		'Js' => array(
-			'Jquery',
-			),
-		);
-
-	public function __construct($options = array()) {
-		$this->View =& ClassRegistry::getObject('view');
-		return parent::__construct($options);
-	}
-
 	function beforeRender() {
+		parent::beforeRender();
 		$params = $this->View->params;
 		if (isset($params['isAjax']) && $params['isAjax'] === true) {
 			return;
