@@ -20,6 +20,7 @@ class JqtoolsHelper extends AppHelper {
 	}
 
 	public function beforeRender() {
+		$params = $this->View->params;
 		if (isset($params['isAjax']) && $params['isAjax'] === true) {
 			return;
 		}
