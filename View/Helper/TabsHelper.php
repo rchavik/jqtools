@@ -10,7 +10,7 @@ class TabsHelper extends JqtoolsHelper {
 
 	function beforeRender() {
 		parent::beforeRender();
-		$params = $this->View->params;
+		$params = $this->_View->params;
 		if (isset($params['isAjax']) && $params['isAjax'] === true) {
 			return;
 		}

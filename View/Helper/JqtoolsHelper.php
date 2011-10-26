@@ -13,14 +13,14 @@ class JqtoolsHelper extends AppHelper {
 			),
 		);
 
-	public function __construct($options = array()) {
-		$this->View =& ClassRegistry::getObject('view');
+	public function __construct(View $View, $options = array()) {
+		$this->_View =& ClassRegistry::getObject('view');
 		Configure::load('Jqtools.jqtools');
-		return parent::__construct($options);
+		return parent::__construct($View, $options);
 	}
 
 	public function beforeRender() {
-		$params = $this->View->params;
+		$params = $this->_View->params;
 		if (isset($params['isAjax']) && $params['isAjax'] === true) {
 			return;
 		}
