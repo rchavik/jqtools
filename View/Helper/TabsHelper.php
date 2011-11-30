@@ -50,7 +50,7 @@ class TabsHelper extends JqtoolsHelper {
 			if (is_array($element) && isset($element['html'])) {
 				$panes .= $this->Html->div('pane', $element['html'], $options);
 			} else {
-				$panes .= $this->Html->div('pane', $this->View->element($tab['element'], $tab['options']));
+				$panes .= $this->Html->div('pane', $this->_View->element($tab['element'], $tab['options']));
 			}
 		}
 
