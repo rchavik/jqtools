@@ -4,20 +4,12 @@ class JqtoolsHelper extends AppHelper {
 
 	var $script = false;
 
-	var $View = null;
-
 	var $helpers = array(
 		'Html',
 		'Js' => array(
 			'Jquery',
 			),
 		);
-
-	public function __construct(View $View, $options = array()) {
-		$this->_View =& ClassRegistry::getObject('view');
-		Configure::load('Jqtools.jqtools');
-		return parent::__construct($View, $options);
-	}
 
 	public function beforeRender() {
 		$params = $this->_View->params;
